@@ -61,7 +61,6 @@ export default {
     plugins: [
       "expo-router",
       "expo-font",
-      "./plugins/withStripeAndroid.js",
       [
         "expo-notifications",
         {
@@ -115,7 +114,7 @@ export default {
         "@stripe/stripe-react-native",
         {
           merchantIdentifier: "merchant.com.radowanahmed.MataimApp",
-          enableGooglePay: true,
+          enableGooglePay: false,
         },
       ],
     ],
