@@ -61,7 +61,6 @@ export default {
     plugins: [
       "expo-router",
       "expo-font",
-      "./plugins/withStripeAndroid.js",
       [
         "expo-notifications",
         {
