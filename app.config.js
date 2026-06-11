@@ -103,7 +103,7 @@ export default {
             extraMavenRepos: [
               "../../node_modules/@notifee/react-native/android/libs",
             ],
-            enableMinifyInReleaseBuilds: true,
+            enableMinifyInReleaseBuilds: false,
             proguardRules: "-dontwarn com.stripe.android.pushProvisioning.**",
           },
           ios: {
