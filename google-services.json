@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402368276368",
+    "project_id": "mataim-notifications",
+    "storage_bucket": "mataim-notifications.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402368276368:android:71e43f26cc0594a32ff515",
+        "android_client_info": {
+          "package_name": "com.radowanahmed.MataimApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPCEdqsikXh-VJUbOJci103Gb6czYVTHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

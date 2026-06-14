@@ -1,0 +1,42 @@
+const { getDefaultConfig } = require('expo/metro-config');
+const path = require('path');
+
+const config = getDefaultConfig(__dirname);
+const rootDir = __dirname;
+
+// CRITICAL: Explicitly set module paths to ONLY app and node_modules
+config.resolver.nodeModulesPaths = [
+  path.resolve(rootDir, 'node_modules'),
+];
+
+// ONLY watch app and components - NEVER backend
+config.watchFolders = [
+  path.resolve(rootDir, 'app'),
+  path.resolve(rootDir, 'components'),
+];
+
+// Aggressive blocklist for backend
+config.resolver.blockList = [
+  ...(config.resolver.blockList || []),
+  /backend\/.*/,
+  /backend$/,
+  /backend\\\\.*/,
+  /\/backend\//,
+];
+
+// Custom resolver to catch backend references early
+const originalResolveRequest = config.resolver.resolveRequest;
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (
+    moduleName.startsWith('backend') ||
+    moduleName.includes('/backend') ||
+    moduleName.includes('\\backend')
+  ) {
+    const error = new Error(`BLOCKED: Cannot import backend: ${moduleName}`);
+    error.code = 'MODULE_NOT_FOUND';
+    throw error;
+  }
+  return originalResolveRequest(context, moduleName, platform);
+};
+
+module.exports = config;

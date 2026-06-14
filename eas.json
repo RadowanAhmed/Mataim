@@ -12,7 +12,13 @@
       "distribution": "internal"
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://zkdbkmukugayxhnmzfxa.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZGJrbXVrdWdheXhobm16ZnhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3ODUyMzQsImV4cCI6MjA4MzM2MTIzNH0.qfv7CFF0rlgdSVuGJ-yFfWSNBx8PZ_jMiJ_ny1UQsbQ",
+        "EXPO_PUBLIC_API_URL": "https://mataim.eu-north-1.elasticbeanstalk.com",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_live_51TWeRRKbp9u7EoS2wPTql3GTCqMkjGp8qgMSenc3Ue8NcMj1PBek9F0X3PQJC00QlXapdEdmZ2t2NJUHtKN1qVP000cY5ehLpJ"
+      }
     }
   },
   "submit": {
